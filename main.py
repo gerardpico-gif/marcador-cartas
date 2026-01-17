@@ -1,3 +1,4 @@
+import os # Añade esto al principio del archivo
 import flet as ft
 
 def main(page: ft.Page):
@@ -73,4 +74,7 @@ def main(page: ft.Page):
     )
 
 
-ft.app(target=main, view=ft.AppView.WEB_BROWSER, port=8080)
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8080))
+    ft.app(target=main, view=ft.AppView.WEB_BROWSER, port=port)
+
